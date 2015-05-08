@@ -762,7 +762,7 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
         if (FXFormCanGetValueForKey(form, @"field")
             && FXFormCanGetValueForKey(form, @"field.cellConfig")
             && [form respondsToSelector:@selector(field)]
-            && [[form performSelector:@selector(field)] respondsToSelector:@selector(field)]) {
+            && [[form performSelector:@selector(field)] respondsToSelector:@selector(cellConfig)]) {
             _cellConfig = [[form performSelector:@selector(field)] performSelector:@selector(cellConfig)];
 #pragma clang diagnostic pop
         } else {
